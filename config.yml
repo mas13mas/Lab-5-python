@@ -1,0 +1,21 @@
+defaults:
+  snmp_version: "v2c"
+  community: "public"
+  timeout_s: 2.5
+  retries: 1
+  target_budget_s: 10
+  oids:
+    - "sysUpTime.0"
+    - "sysName.0"
+    - "sysDescr.0"
+    - "sysLocation.0"
+
+targets:
+  - name: "AgentRouter"
+    ip: "172.16.0.153"
+
+  - name: "SimonRouter"
+    ip: "172.16.0.179"
+
+  - name: "MagicaSwitch"
+    ip: "172.16.0.235"
