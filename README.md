@@ -29,3 +29,55 @@ pip install pyyaml
 Run and write JSON to a file:
 ```bash
 python3 poller.py --config config.yml --out out.json --log-level INFO
+
+
+
+---
+
+## Logging levels
+The program uses Python logging:
+
+- `INFO`: normal run messages (run start/end, target start/end) + warnings + errors  
+- `WARNING`: only warnings + errors  
+- `ERROR`: only errors  
+- `DEBUG`: most verbose (shows debug messages if present)
+
+Example:
+```bash
+python3 poller.py --config config.yml --out - --log-level INFO
+
+
+
+## Key functions: inputs and outputs 
+
+### `load_config(path)`
+- **Input:** `path` (string) — path to the YAML file, e.g. `config.yml`
+- **Output:** `cfg` (dict) — the YAML parsed into a Python dictionary  
+- **If something is wrong:** raises `ConfigError` (file not found / YAML parse error / wrong format)
+
+### `validate_config(cfg)`
+- **Input:** `cfg` (dict) — the config dictionary from `load_config()`
+- **Output:** nothing (returns `None`)
+- **If something is wrong:** raises `ConfigError` (missing keys, wrong types, etc.)
+
+
+### `poll_target(target, defaults, log)`
+- **Input:**
+  - `target` (dict) — one target entry from config (`name`, `ip`, optional overrides)
+  - `defaults` (dict) — defaults section from config
+  - `log` (Logger) — logger for INFO/WARNING/ERROR messages
+- **Output:** dict (one target result block) containing:
+  - `name`, `ip`
+  - `status` (`ok|partial|failed`)
+  - `runtime_s`
+  - `ok_count`, `fail_count`
+  - `oids` (list of per-OID results)
+
+### `main()`
+- **Input:** CLI arguments:
+  - `--config` path to YAML
+  - `--out` output file path or `-` for stdout
+  - `--log-level` logging level
+- **Output:** exit code:
+  - `0` all OK, `1` partial success, `2` total failure/invalid config
+- **Also outputs:** JSON to stdout or to a file
