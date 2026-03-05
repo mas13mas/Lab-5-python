@@ -42,7 +42,6 @@ The program uses Python logging:
 - `ERROR`: only errors  
 - `DEBUG`: most verbose (shows debug messages if present)
 
-Example:
 ```bash
 python3 poller.py --config config.yml --out - --log-level INFO
 
