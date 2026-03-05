@@ -82,4 +82,3 @@ python3 poller.py --config config.yml --out - --log-level INFO
 - ```**Output:** exit code:
   - `0` all OK, `1` partial success, `2` total failure/invalid config
 - **Also outputs:** JSON to stdout or to a file
-  ```
