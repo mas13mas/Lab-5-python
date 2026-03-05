@@ -29,6 +29,7 @@ pip install pyyaml
 Run and write JSON to a file:
 ```bash
 python3 poller.py --config config.yml --out out.json --log-level INFO
+```
 
 
 
@@ -44,6 +45,7 @@ The program uses Python logging:
 
 ```bash
 python3 poller.py --config config.yml --out - --log-level INFO
+```
 
 
 
@@ -80,3 +82,4 @@ python3 poller.py --config config.yml --out - --log-level INFO
 - **Output:** exit code:
   - `0` all OK, `1` partial success, `2` total failure/invalid config
 - **Also outputs:** JSON to stdout or to a file
+```
