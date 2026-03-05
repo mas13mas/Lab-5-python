@@ -1,18 +1,31 @@
+# Global/default settings used for all targets (unless a target overrides them)
 defaults:
+  # SNMP version for this lab (v2c uses a community string)
   snmp_version: "v2c"
-  community: "public"
-  timeout_s: 2.5
-  retries: 1
-  target_budget_s: 10
-  oids:
-    - "sysUpTime.0"
-    - "sysName.0"
-    - "sysDescr.0"
-    - "sysLocation.0"
 
+  # Default community string (used by all targets unless overridden per target)
+  community: "public"
+
+  # Per SNMP request timeout (seconds)
+  timeout_s: 2.5
+
+  # Retries ONLY on timeout/unreachable (total attempts = 1 + retries)
+  retries: 1
+
+  # Maximum total time spent per target (seconds) so one device can't block the whole run
+  target_budget_s: 10
+
+  # Default OIDs polled for every target
+  oids:
+    - "sysUpTime.0"     # how long the device has been up
+    - "sysName.0"       # device hostname
+    - "sysDescr.0"      # device description / OS info
+    - "sysLocation.0"   # configured location string (may be empty)
+
+# List of SNMP targets (devices) to poll
 targets:
-  - name: "AgentRouter"
-    ip: "172.16.0.153"
+  - name: "AgentRouter"     # friendly name used in logs/JSON
+    ip: "172.16.0.153"      # target IP address
 
   - name: "SimonRouter"
     ip: "172.16.0.179"
