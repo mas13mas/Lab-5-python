@@ -63,7 +63,7 @@ python3 poller.py --config config.yml --out - --log-level INFO
 
 
 ### `poll_target(target, defaults, log)`
-- **Input:**
+- ``` **Input:**
   - `target` (dict) — one target entry from config (`name`, `ip`, optional overrides)
   - `defaults` (dict) — defaults section from config
   - `log` (Logger) — logger for INFO/WARNING/ERROR messages
@@ -74,12 +74,12 @@ python3 poller.py --config config.yml --out - --log-level INFO
   - `ok_count`, `fail_count`
   - `oids` (list of per-OID results)
 
-### `main()`
-- **Input:** CLI arguments:
+###  `main()`
+- ```` **Input:** CLI arguments:
   - --config` path to YAML
   - --out` output file path or `-` for stdout
   - --log-level` logging level
-- **Output:** exit code:
+- ```**Output:** exit code:
   - `0` all OK, `1` partial success, `2` total failure/invalid config
 - **Also outputs:** JSON to stdout or to a file
-```
+  ```
