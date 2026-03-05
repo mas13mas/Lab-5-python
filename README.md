@@ -68,11 +68,11 @@ python3 poller.py --config config.yml --out - --log-level INFO
   - `defaults` (dict) — defaults section from config
   - `log` (Logger) — logger for INFO/WARNING/ERROR messages
 - **Output:** dict (one target result block) containing:
-  - `name`, `ip`
-  - `status` (`ok|partial|failed`)
-  - `runtime_s`
-  - `ok_count`, `fail_count`
-  - `oids` (list of per-OID results)
+-  `name`, `ip`
+-   `status` (`ok|partial|failed`)
+-     runtime_s`
+- `ok_count`, `fail_count`
+-  `oids` (list of per-OID results)
 
 ###  `main()`
 -  **Input:** CLI arguments:
