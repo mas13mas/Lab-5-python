@@ -67,7 +67,7 @@ python3 poller.py --config config.yml --out - --log-level INFO
   - `target` (dict) — one target entry from config (`name`, `ip`, optional overrides)
   - `defaults` (dict) — defaults section from config
   - `log` (Logger) — logger for INFO/WARNING/ERROR messages
-- **Output:** dict (one target result block) containing:
+- ```**Output:** dict (one target result block) containing:
   - `name`, `ip`
   - `status` (`ok|partial|failed`)
   - `runtime_s`
