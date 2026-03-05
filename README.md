@@ -70,7 +70,7 @@ python3 poller.py --config config.yml --out - --log-level INFO
 - **Output:** dict (one target result block) containing:
 -  `name`, `ip`
 -   `status` (`ok|partial|failed`)
--      `runtime_s`
+-     `runtime_s`
 - `ok_count`, `fail_count`
 -  `oids` (list of per-OID results)
 
