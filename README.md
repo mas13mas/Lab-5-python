@@ -51,7 +51,7 @@ python3 poller.py --config config.yml --out - --log-level INFO
 
 ## Key functions: inputs and outputs 
 
-###`load_config(path)`
+###` load_config(path)`
 - **Input:** `path` (string) — path to the YAML file,  `config.yml`
 - **Output:** `cfg` (dict) — the YAML parsed into a Python dictionary  
 - **If something is wrong:** raises `ConfigError` (file not found / YAML parse error / wrong format)
@@ -63,11 +63,11 @@ python3 poller.py --config config.yml --out - --log-level INFO
 
 
 ### `poll_target(target, defaults, log)`
-- ``` **Input:**
+-  **Input:**
   - `target` (dict) — one target entry from config (`name`, `ip`, optional overrides)
   - `defaults` (dict) — defaults section from config
   - `log` (Logger) — logger for INFO/WARNING/ERROR messages
-- ```**Output:** dict (one target result block) containing:
+- **Output:** dict (one target result block) containing:
   - `name`, `ip`
   - `status` (`ok|partial|failed`)
   - `runtime_s`
