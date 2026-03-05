@@ -21,3 +21,11 @@ source .venv/bin/activate
 pip install --upgrade pip
 pip install pyyaml
 ```
+
+---
+
+## Usage
+
+Run and write JSON to a file:
+```bash
+python3 poller.py --config config.yml --out out.json --log-level INFO
