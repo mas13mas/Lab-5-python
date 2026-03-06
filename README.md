@@ -49,7 +49,7 @@ python3 poller.py --config config.yml --out - --log-level INFO
 
 
 
-## Key functions: inputs and outputs 
+Key functions: inputs and outputs 
 
 ###` load_config(path)`
 - **Input:** `path` (string) — path to the YAML file,  `config.yml`
