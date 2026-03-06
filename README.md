@@ -35,7 +35,7 @@ python3 poller.py --config config.yml --out out.json --log-level INFO
 
 ---
 
-## Logging levels
+Logging levels
 The program uses Python logging:
 
 - `INFO`: normal run messages (run start/end, target start/end) + warnings + errors  
