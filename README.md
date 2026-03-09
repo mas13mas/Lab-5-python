@@ -29,6 +29,7 @@ pip install pyyaml
 Run and write JSON to a file:
 ```bash
 python3 poller.py --config config.yml --out out.json --log-level INFO
+python3 poller.py --config config.yml --out out.json --log-level WARNING
 ```
 
 
